@@ -1,4 +1,4 @@
-//original code from https://github.com/esphome/esphome/blob/dev/esphome/components/
+//original code from https://github.com/esphome/esphome/blob/dev/esphome/components/alpha3/
 //I just figured out the new request "command" bytes and response type bytes
 
 #include "alpha2.h"

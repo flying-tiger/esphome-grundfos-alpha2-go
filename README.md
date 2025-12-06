@@ -8,7 +8,7 @@ geni_request_power <br />
 GENI_RESPONSE_TYPE_FLOW_HEAD <br />
 GENI_RESPONSE_TYPE_POWER <br />
 to the new(?) values that work with the Alpha2 GO. <br />
-I used Android's HCI logging feature + Wireshark to find the values. <br />
+I used Android's HCI logging feature + Wireshark to find the values (while using the official Grundfos Go app). <br />
 
 If anyone wants to use this to add official support in esphome feel free to do so. I probably won't get around to it (and figuring out if/how it should maybe be integrated into a more general grundfos Alpha component because maybe these new values are also necessary for new models of the alpha3 pump).
 

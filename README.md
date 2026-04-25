@@ -12,10 +12,46 @@ I used Android's HCI logging feature + Wireshark to find the values (while using
 
 If anyone wants to use this to add official support in esphome feel free to do so. I probably won't get around to it (and figuring out if/how it should maybe be integrated into a more general grundfos Alpha component because maybe these new values are also necessary for new models of the alpha3 pump).
 
-## How to add it as a external component in your home assistant:
+### flying-tiger updates
+* Reorganize repository for use as non-local external component.
+
+## How to add it as a external component in your home assistant
+
+Add the following as your esphome device configuration:
+
+```
+external_components:
+ - source: github://flying-tiger/esphome-grundfos-alpha2-go
+   components: [alpha2]
+
+esp32_ble_tracker:
+
+ble_client:
+  - mac_address: XX:XX:XX:XX:XX:XX # your pump's bluetooth mac here
+    id: heatingpump
+
+sensor:
+  - platform: alpha2
+    ble_client_id: heatingpump
+    flow:
+      name: "Pump Flow"
+    head:
+      name: "Pump Pressure"
+    speed:
+      name: "Pump Speed"
+    power:
+      name: "Pump Power"
+    voltage:
+      name: "Pump Voltage"
+    current:
+      name: "Pump Current"
+```
+
+### Local Method
 1. Access your /config/esphome/ folder (e.g. via the SMB Addon in HassOS)
-2. Create a folder named "components"
-3. Copy the "alpha2" folder from this repository into it
+2. Create a folder named "components" if it does not exit
+3. Copy the "alpha2" folder from the "components" folder in this repository to the
+   one on your machine
 
 In your esphome device yaml config add this:
 
